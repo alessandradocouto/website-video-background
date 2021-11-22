@@ -1,9 +1,5 @@
 'use strict';
 
-const parent = document.querySelector('.container-body');
-const parentC = document.querySelector('.container');
-
-
 async function fetchApi() {
     try {
         const urlApi = (`https://type.fit/api/quotes`);
@@ -34,13 +30,14 @@ function showQuote() {
             textAuthor[countBtn].author = 'Unknown';
         }
 
-        tagHtml =
-                '<h2 class="container-quote-text">' + textAuthor[countBtn].text + '</h2>' +
-                '<h3 class="container-quote-author"> By ' + textAuthor[countBtn].author +
-                '</h3>';
+        tagHtml =  '<h2 class="container-quote-text">' + 
+                    textAuthor[countBtn].text +
+                    '</h2>' + 
+                    '<h3 class="container-quote-author">' + 
+                    textAuthor[countBtn].author +
+                    '</h3>';
 
         displayStr.innerHTML = tagHtml;
-
         countBtn++;
         searchBtn.textContent = 'mais frases';
     });
